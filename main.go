@@ -71,7 +71,7 @@ func (r *replacer) replace(filename string) error {
 	packageDirective := string(buf[packageDirectiveMatches[2]:packageDirectiveMatches[3]])
 	packageNameMatches := r.r_package.FindStringSubmatch(packageDirective)
 	if len(packageNameMatches) == 0 {
-		fmt.Printf("    package didn't match: %v\n", packageNameMatches[1])
+		fmt.Printf("    package didn't match: %v\n", packageDirective)
 		return nil
 	}
 	for i, _ := range packageNameMatches {
